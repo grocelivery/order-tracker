@@ -16,21 +16,21 @@ services:
     depends_on:
       - php-fpm
 
-    php-fpm:
-      build: .docker/php
-      container_name: order-tracker-php-fpm
-      working_dir: /application
-      volumes:
-        - .:/application
+  php-fpm:
+    build: .docker/php
+    container_name: order-tracker-php-fpm
+    working_dir: /application
+    volumes:
+      - .:/application
 
-    database:
-      container_name: order-tracker-database
-      image: mysql:5.6
-      environment:
-        - MYSQL_RANDOM_ROOT_PASSWORD=yes
-        - MYSQL_DATABASE=${DB_DATABASE}
-        - MYSQL_USER=${DB_USERNAME}
-        - MYSQL_PASSWORD=${DB_PASSWORD}
+  database:
+    container_name: order-tracker-database
+    image: mysql:5.6
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
 
 networks:
   default:
