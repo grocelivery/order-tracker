@@ -24,12 +24,12 @@ docker-compose up -d
 
 Uruchomienie migracji bazodanowych
 ```
-docker container exec ads-catalog-php-fpm php artisan migrate
+docker container exec order-tracker-php-fpm php artisan migrate
 ```
 
 Uzupełnienie bazy danych definicjami statusów
 ```
-docker container exec ads-catalog-php-fpm php artisan db:seed
+docker container exec order-tracker-php-fpm php artisan db:seed
 ```
 
 ### Po skonfigurowaniu aplikacja powinna być dostępna na:
